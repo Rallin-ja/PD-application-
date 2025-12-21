@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Create your account</title>
+
+  <link rel="stylesheet" href="create-account.css">
+</head>
+
+<body class="ca-page">
+
+  <div class="ca-container">
+
+    <!-- Logo -->
+    <img
+      src="https://upload.wikimedia.org/wikipedia/commons/0/04/ChatGPT_logo.svg"
+      class="ca-logo"
+      alt="ChatGPT Logo"
+    />
+
+    <!-- Title -->
+    <h1 class="ca-title">Create your account</h1>
+
+    <!-- Email -->
+    <div class="ca-input-group">
+      <input type="email" value="example@gmail.com" disabled />
+      <span class="ca-edit">Edit</span>
+    </div>
+
+    <!-- Password -->
+    <div class="ca-input-group">
+      <input type="password" id="password" placeholder="Password" />
+      <span class="ca-eye" id="togglePassword">👁</span>
+    </div>
+
+    <!-- Password rule -->
+    <div class="ca-rule-box">
+      <p>Your password must contain:</p>
+      <p class="ca-rule-valid">✔ At least 8 characters</p>
+    </div>
+
+    <!-- Button -->
+    <button class="ca-btn">Continue</button>
+
+    <!-- Footer -->
+    <p class="ca-footer">
+      Already have an account?
+      <a href="#">Log in</a>
+    </p>
+
+  </div>
+
+  <script src="create-account.js"></script>
+</body>
+</html>
