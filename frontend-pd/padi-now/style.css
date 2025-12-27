@@ -420,6 +420,28 @@ body {
   margin-top: auto;
 }
 
+.progress-card {
+  padding: 15px;
+}
+
+.progress-card h3 {
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+
+#progressChart {
+  width: 100%;
+  height: 200px;
+}
+
+/* Mobile friendly */
+@media (max-width: 600px) {
+  #progressChart {
+    height: 160px;
+  }
+}
+
+
 /* Main */
 .page-dashboard .main {
   flex: 1;

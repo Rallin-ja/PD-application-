@@ -140,3 +140,44 @@ if (createAccountPage) {
     }
   });
 }
+
+
+console.log("Progress chart loaded");
+
+const canvas = document.getElementById("progressChart");
+
+if (canvas) {
+  const ctx = canvas.getContext("2d");
+
+  function resizeCanvas() {
+    canvas.width = canvas.offsetWidth;
+    canvas.height = canvas.offsetHeight;
+    drawChart();
+  }
+
+  const data = [200, 300, 280, 400, 600, 750, 500];
+
+  function drawChart() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    const padding = 30;
+    const max = Math.max(...data);
+    const stepX = (canvas.width - padding * 2) / (data.length - 1);
+    const stepY = (canvas.height - padding * 2) / max;
+
+    ctx.strokeStyle = "#ff5722";
+    ctx.lineWidth = 3;
+    ctx.beginPath();
+
+    data.forEach((val, i) => {
+      const x = padding + i * stepX;
+      const y = canvas.height - padding - val * stepY;
+      i === 0 ? ctx.moveTo(x, y) : ctx.lineTo(x, y);
+    });
+
+    ctx.stroke();
+  }
+
+  window.addEventListener("resize", resizeCanvas);
+  resizeCanvas();
+}

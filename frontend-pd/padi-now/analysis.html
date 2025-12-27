@@ -21,38 +21,34 @@
     <img src="https://img.icons8.com/ios-filled/50/combo-chart.png"/>
     <span>Analysis</span>
   </div>
-
+ 
+  <a href="settings.html" class="menu-link">
   <div class="menu-item">
     <img src="https://img.icons8.com/ios-filled/50/settings.png"/>
     <span>Settings</span>
   </div>
+  </a>
 
   <!-- MOVED USER SECTION TO BOTTOM -->
+   <a href="profile.html" class="menu-link user-bottom">
   <div class="user-section">
     <img src="" alt="">
     <span>User Name</span>
   </div>
+   </a>
 
 </div>
 
     <!-- Main -->
     <main class="main">
       <header class="profile">
-        <div class="avatar big"></div>
         <div>
-          <h2>User Name</h2>
-          <p>Std</p>
-          <p>School Name</p>
+          <h4>User Name:</h4>
+          <h4>School Name:</h4>
         </div>
       </header>
 
       <section class="filters">
-        <select>
-          <option>Subject</option>
-          <option>Maths</option>
-          <option>Science</option>
-        </select>
-
         <div class="time-filter">
           <button class="active">Today</button>
           <button>This Week</button>
@@ -62,7 +58,10 @@
       </section>
 
       <section class="cards">
-        <div class="card">Weekly Progress</div>
+    <div class="card progress-card">
+      <h3>Progress</h3>
+      <canvas id="progressChart"></canvas>
+    </div>
         <div class="card">Study Time</div>
         <div class="card">Strength</div>
       </section>
