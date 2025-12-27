@@ -1,1 +1,60 @@
-<h1>hello jaya</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>chatpage UI</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <a href="analysis.html" class="menu-link">
+    <div class="menu-item">
+    <img src="https://img.icons8.com/ios-filled/50/combo-chart.png"/>
+    <span>Analysis</span>
+  </div>
+    </a>
+
+<a href="settings.html" class="menu-link">
+  <div class="menu-item">
+    <img src="https://img.icons8.com/ios-filled/50/settings.png"/>
+    <span>Settings</span>
+  </div>
+</a>
+
+  <!-- MOVED USER SECTION TO BOTTOM -->
+  <a href="profile.html" class="menu-link user-bottom">
+  <div class="user-section">
+    <img src="" alt="">
+    <span>User Name</span>
+  </div>
+  </a>
+
+
+</div>
+
+
+  <!-- REPLACED: main-area wrapper with chat-area and chat-input -->
+  <div class="main-area">
+
+      <div class="chat-area" id="chatArea"></div>
+
+      <div class="chat-input">
+          <input type="text" id="messageInput" placeholder="Message">
+          <button id="sendBtn">➤</button>
+      </div>
+
+  </div>
+  <!-- END replaced section -->
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- UNIQUE WRAPPER (VERY IMPORTANT) -->
+<div class="page-dashboard">
+
+  <div class="layout">
+
+    <!-- Sidebar -->
+  <div class="sidebar">
+    
+    <div class="menu-item">
+    <img src="https://img.icons8.com/ios-filled/50/combo-chart.png"/>
+    <span>Analysis</span>
+  </div>
+
+  <div class="menu-item">
+    <img src="https://img.icons8.com/ios-filled/50/settings.png"/>
+    <span>Settings</span>
+  </div>
+
+  <!-- MOVED USER SECTION TO BOTTOM -->
+  <div class="user-section">
+    <img src="" alt="">
+    <span>User Name</span>
+  </div>
+
+</div>
+
+    <!-- Main -->
+    <main class="main">
+      <header class="profile">
+        <div class="avatar big"></div>
+        <div>
+          <h2>User Name</h2>
+          <p>Std</p>
+          <p>School Name</p>
+        </div>
+      </header>
+
+      <section class="filters">
+        <select>
+          <option>Subject</option>
+          <option>Maths</option>
+          <option>Science</option>
+        </select>
+
+        <div class="time-filter">
+          <button class="active">Today</button>
+          <button>This Week</button>
+          <button>This Month</button>
+          <button>All</button>
+        </div>
+      </section>
+
+      <section class="cards">
+        <div class="card">Weekly Progress</div>
+        <div class="card">Study Time</div>
+        <div class="card">Strength</div>
+      </section>
+    </main>
+
+  </div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
