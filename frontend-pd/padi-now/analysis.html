@@ -9,38 +9,34 @@
 
 <body>
 
-<!-- UNIQUE WRAPPER (VERY IMPORTANT) -->
 <div class="page-dashboard">
-
   <div class="layout">
 
     <!-- Sidebar -->
-  <div class="sidebar">
-    
-    <div class="menu-item">
-    <img src="https://img.icons8.com/ios-filled/50/combo-chart.png"/>
-    <span>Analysis</span>
-  </div>
- 
-  <a href="settings.html" class="menu-link">
-  <div class="menu-item">
-    <img src="https://img.icons8.com/ios-filled/50/settings.png"/>
-    <span>Settings</span>
-  </div>
-  </a>
+    <div class="sidebar">
+      <div class="menu-item">
+        <img src="https://img.icons8.com/ios-filled/50/combo-chart.png"/>
+        <span>Analysis</span>
+      </div>
 
-  <!-- MOVED USER SECTION TO BOTTOM -->
-   <a href="profile.html" class="menu-link user-bottom">
-  <div class="user-section">
-    <img src="" alt="">
-    <span>User Name</span>
-  </div>
-   </a>
+      <a href="settings.html" class="menu-link">
+        <div class="menu-item">
+          <img src="https://img.icons8.com/ios-filled/50/settings.png"/>
+          <span>Settings</span>
+        </div>
+      </a>
 
-</div>
+      <a href="profile.html" class="menu-link user-bottom">
+        <div class="user-section">
+          <img src="https://img.icons8.com/ios-filled/50/settings.png"/>
+          <span>User Name</span>
+        </div>
+      </a>
+    </div>
 
     <!-- Main -->
     <main class="main">
+
       <header class="profile">
         <div>
           <h4>User Name:</h4>
@@ -48,29 +44,43 @@
         </div>
       </header>
 
-      <section class="filters">
-        <div class="time-filter">
-          <button class="active">Today</button>
-          <button>This Week</button>
-          <button>This Month</button>
-          <button>All</button>
-        </div>
-      </section>
-
-      <section class="cards">
-    <div class="card progress-card">
-      <h3>Progress</h3>
-      <canvas id="progressChart"></canvas>
-    </div>
-        <div class="card">Study Time</div>
-        <div class="card">Strength</div>
-      </section>
-    </main>
-
-  </div>
-
+      <div class="time-filter" id="timeFilter">
+  <button data-type="today" class="active">Today</button>
+  <button data-type="week">This Week</button>
+  <button data-type="month">This Month</button>
+  <button data-type="all">All</button>
 </div>
 
-<script src="script.js"></script>
+
+      <!-- CARDS -->
+      <section class="cards">
+
+        <!-- Progress -->
+        <div class="card progress-card">
+          <h3>Progress</h3>
+          <canvas id="progressChart"></canvas>
+        </div>
+
+        <!-- Study Time -->
+        <div class="card study-card">
+          <h3>Study Time</h3>
+          <canvas id="studyChart"></canvas>
+        </div>
+
+        <!-- Strength -->
+        <div class="card">
+          <h3>Strength</h3>
+        </div>
+
+      </section>
+
+    </main>
+  </div>
+</div>
+
+<!-- Chart.js (MUST COME FIRST) -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="analysis.js"></script>
+
 </body>
 </html>

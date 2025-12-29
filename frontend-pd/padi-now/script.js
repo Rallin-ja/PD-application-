@@ -140,44 +140,161 @@ if (createAccountPage) {
     }
   });
 }
+/* analysis page */
 
+document.addEventListener("DOMContentLoaded", () => {
 
-console.log("Progress chart loaded");
+  /* PROGRESS LINE CHART */
+  const progressCanvas = document.getElementById("progressChart");
 
-const canvas = document.getElementById("progressChart");
-
-if (canvas) {
-  const ctx = canvas.getContext("2d");
-
-  function resizeCanvas() {
-    canvas.width = canvas.offsetWidth;
-    canvas.height = canvas.offsetHeight;
-    drawChart();
-  }
-
-  const data = [200, 300, 280, 400, 600, 750, 500];
-
-  function drawChart() {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-    const padding = 30;
-    const max = Math.max(...data);
-    const stepX = (canvas.width - padding * 2) / (data.length - 1);
-    const stepY = (canvas.height - padding * 2) / max;
-
-    ctx.strokeStyle = "#ff5722";
-    ctx.lineWidth = 3;
-    ctx.beginPath();
-
-    data.forEach((val, i) => {
-      const x = padding + i * stepX;
-      const y = canvas.height - padding - val * stepY;
-      i === 0 ? ctx.moveTo(x, y) : ctx.lineTo(x, y);
+  if (progressCanvas) {
+    new Chart(progressCanvas, {
+      type: "line",
+      data: {
+        labels: ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
+        datasets: [{
+          data: [10, 25, 40, 55, 65, 80, 90],
+          borderColor: "#1e88e5",
+          backgroundColor: "rgba(30,136,229,0.2)",
+          fill: true,
+          tension: 0.4
+        }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+          legend: { display: false }
+        },
+        scales: {
+          y: { beginAtZero: true, max: 100 }
+        }
+      }
     });
-
-    ctx.stroke();
   }
 
-  window.addEventListener("resize", resizeCanvas);
-  resizeCanvas();
-}
+  /* STUDY TIME BAR / TIMELINE */
+  const studyCanvas = document.getElementById("studyChart");
+
+  if (studyCanvas) {
+    new Chart(studyCanvas, {
+      type: "bar",
+      data: {
+        labels: ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
+        datasets: [{
+          data: [1, 2, 1.5, 3, 2.5, 4, 3],
+          backgroundColor: "#43a047"
+        }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+          legend: { display: false }
+        },
+        scales: {
+          y: { beginAtZero: true }
+        }
+      }
+    });
+  }
+
+});
+
+
+
+/* =========settings page ===========*/
+
+document.addEventListener("DOMContentLoaded", () => {
+
+  const notifyToggle = document.getElementById("notifyToggle");
+  const aboutBtn = document.getElementById("aboutBtn");
+  const inviteBtn = document.getElementById("inviteBtn");
+  const logoutBtn = document.getElementById("logoutBtn");
+  const deleteBtn = document.getElementById("deleteBtn");
+
+  // Notifications
+  if (notifyToggle) {
+    notifyToggle.addEventListener("change", () => {
+      alert(
+        notifyToggle.checked
+          ? "Notifications enabled"
+          : "Notifications disabled"
+      );
+    });
+  }
+
+  // About
+  if (aboutBtn) {
+    aboutBtn.addEventListener("click", () => {
+      alert("This app helps you track study progress.");
+    });
+  }
+
+  // Invite friends
+  if (inviteBtn) {
+    inviteBtn.addEventListener("click", () => {
+      alert("Invite link copied!");
+    });
+  }
+
+  // Logout
+  if (logoutBtn) {
+    logoutBtn.addEventListener("click", () => {
+      if (confirm("Are you sure you want to logout?")) {
+        window.location.href = "login.html";
+      }
+    });
+  }
+
+  // Delete account
+  if (deleteBtn) {
+    deleteBtn.addEventListener("click", () => {
+      if (confirm("This action is permanent. Delete account?")) {
+        alert("Account deleted");
+      }
+    });
+  }
+
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+
+  const notifyBtn = document.getElementById("notificationBtn");
+  const notifyDot = document.getElementById("notifyDot");
+
+  // Simulate unread notifications (you can replace with backend later)
+  const hasNotification = true;
+
+  if (notifyDot && hasNotification) {
+    notifyDot.style.display = "inline-block";
+  }
+
+});
+
+/*notification page */
+
+document.addEventListener("DOMContentLoaded", () => {
+
+  const notificationMsg = document.getElementById("notificationMsg");
+  const profileImg = document.getElementById("notifyProfileImg");
+
+  // Example: Load profile image (later from backend/localStorage)
+  if (profileImg) {
+    profileImg.src = "https://via.placeholder.com/150";
+  }
+
+  // Example notification data
+  const notifications = [];
+
+  if (notificationMsg) {
+    if (notifications.length === 0) {
+      notificationMsg.textContent = "No updates";
+    } else {
+      notificationMsg.textContent = notifications[0];
+    }
+  }
+
+});
+
+
