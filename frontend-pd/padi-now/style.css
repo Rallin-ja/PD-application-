@@ -22,9 +22,8 @@ body {
   padding: 10px;
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 30px;
 }
-
 
 .user-section {
   margin-top: auto;
@@ -39,7 +38,7 @@ body {
 .sidebar {
   display: flex;
   flex-direction: column;
-  height: 95vh;
+  height: 100vh;
 }
 
 .user-section img {
@@ -305,41 +304,6 @@ body {
   text-decoration: none;
 }
 
-.wb-divider {
-  display: flex;
-  align-items: center;
-  margin: 25px 0;
-}
-
-.wb-divider::before,
-.wb-divider::after {
-  content: "";
-  flex: 1;
-  height: 1px;
-  background: #ddd;
-}
-
-.wb-divider span {
-  margin: 0 10px;
-  font-size: 12px;
-  color: #666;
-}
-
-.wb-btn-outline {
-  width: 100%;
-  padding: 12px;
-  background: white;
-  border: 1px solid #226db4;
-  border-radius: 8px;
-  font-size: 15px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  cursor: pointer;
-  margin-bottom: 12px;
-}
-
 /* MOBILE FRIENDLY */
 @media (max-width: 480px) {
   .wb-container {
@@ -370,28 +334,37 @@ body {
 .sidebar {
   width: 250px;
   background: #d8d8d8;
-  padding: 20px;
+  padding: 10px;
   display: flex;
   flex-direction: column;
-  gap: 25px;
+  gap: 30px;
+
 }
 
 .menu-item {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 15px;
+  font-size: 17px;
   cursor: pointer;
 }
 
 .menu-link {
   text-decoration: none;
-  color: black;
+  color: inherit;
+  display: block;
+  cursor: pointer;
+  padding-top: 20px;
 }
 
 .user-section {
   margin-top: auto;
-  padding-top: 15px;
-  border-top: 1px solid #bbb;
+  padding: 15px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border-top: 1px solid #ccc;
+  cursor: pointer;
 }
 
 .page-dashboard .filters {
@@ -437,23 +410,23 @@ body {
 
 /* ACTIVE STATES */
 .time-filter button.active-today {
-  background: #000;
+  background: #226db4;
   color: #fff;
 }
 
 .time-filter button.active-week {
-  background: #555;
+  background: #226db4;
   color: #fff;
 }
 
 .time-filter button.active-month {
-  background: #bdbdbd;
-  color: #000;
+  background: #226db4;
+  color: #fff;
 }
 
 .time-filter button.active-all {
-  background: #e0e0e0;
-  color: #000;
+  background: #226db4;
+  color: #fff;
 }
 
 /* Cards */
@@ -730,7 +703,7 @@ body {
 
 /* DANGER */
 .danger {
-  color: #d32f2f;
+  color: #226db4;
   font-weight: bold;
 }
 
@@ -742,7 +715,7 @@ body {
 .notify-dot {
   width: 8px;
   height: 8px;
-  background: #1e88e5;
+  background: #226db4;
   border-radius: 50%;
   position: absolute;
   top: 2px;
@@ -787,7 +760,7 @@ body {
 }
 
 .btn-logout {
-  background: #e53935;
+  background: #226db4;
   color: #fff;
 }
 
@@ -833,7 +806,7 @@ body {
 }
 
 .btn-delete {
-  background: #d32f2f;
+  background: #226db4;
   color: #fff;
 }
 
@@ -874,4 +847,67 @@ body {
   border-radius: 10px;
   text-align: center;
   font-size: 15px;
+}
+
+
+
+/* ===== ABOUT PAGE ===== */
+
+
+.about-page {
+  min-height: 100vh;
+  background: #f2f2f2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Inter, sans-serif;
+}
+
+.about-container {
+  width: 100%;
+  max-width: 800px;
+  padding: 20px;
+  
+}
+
+.about-title {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.about-card {
+  background: #fff;
+  padding: 18px;
+  border-radius: 14px;
+  margin-bottom: 16px;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+}
+
+.about-card h2 {
+  margin-bottom: 8px;
+  font-size: 20px;
+}
+
+.about-card p {
+  color: #555;
+  line-height: 1.6;
+}
+
+.back-btn {
+  width: 100%;
+  margin-top: 20px;
+  padding: 12px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  background: #226db4;
+  color: #fff;
+  font-size: 16px;
+}
+
+/* Mobile friendly */
+@media (max-width: 480px) {
+  .about-card h2 {
+    font-size: 18px;
+  }
 }
