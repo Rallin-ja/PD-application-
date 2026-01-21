@@ -1,12 +1,15 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
-
-
 
 body {
   margin: 0;
-  font-family: "Inter", sans-serif;
   background: #d8d8d8;
 }
+
+/* GLOBAL FONT */
+html, body {
+  font-family: 'Inter', sans-serif;
+}
+
+
 
 /* Main container */
 .container {
@@ -173,7 +176,74 @@ body {
   border-top: 1px solid #ddd;
   background: #e6e6e6;
 }
+/* animation */
 
+/* ===== PAGE LOAD FADE ===== */
+.container {
+  animation: fadeIn 0.6s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===== SIDEBAR MENU HOVER ===== */
+.menu-item {
+  transition: background 0.3s ease, transform 0.2s ease;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.menu-item:hover {
+  background: #cfcfcf;
+  transform: translateX(4px);
+}
+
+/* ===== CHAT MESSAGE ANIMATION ===== */
+.message {
+  animation: messageIn 0.25s ease-in-out;
+}
+
+@keyframes messageIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===== INPUT FOCUS EFFECT ===== */
+.chat-input input {
+  transition: box-shadow 0.3s ease, border 0.3s ease;
+}
+
+.chat-input input:focus {
+  box-shadow: 0 0 0 2px rgba(30,136,229,0.3);
+  border: 1px solid #1e88e5;
+}
+
+/* ===== SEND BUTTON ANIMATION ===== */
+#sendBtn {
+  transition: transform 0.15s ease, background 0.3s ease;
+}
+
+#sendBtn:hover {
+  transform: scale(1.05);
+}
+
+#sendBtn:active {
+  transform: scale(0.95);
+}
 
 /* ============================= */
 /* Mobile & Tablet Responsiveness */
@@ -235,7 +305,7 @@ body {
 /* ===== WELCOME BACK PAGE ===== */
 .wb-page {
   min-height: 100vh;
-  background: #f2f2f2;                 /* light background */
+  background: #e6e6e6;                 /* light background */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -246,7 +316,7 @@ body {
 .wb-container {
   background: #ffffff;
   width: 100%;
-  max-width: 380px;                    /* 👈 card width */
+  max-width: 400px;                    /* 👈 card width */
   padding: 24px 20px;
   border-radius: 16px;                 /* rounded card */
   box-shadow: 0 10px 30px rgba(0,0,0,0.12);
@@ -327,7 +397,7 @@ body {
 .page-dashboard .layout {
   display: flex;
   min-height: 100vh;
-  background: #e5e5e5;
+  background: #e6e6e6;
 }
 
 /* Sidebar */
@@ -407,26 +477,78 @@ body {
   border-radius: 6px;
   color: #000;
 }
+/* ---------------------*/
+.profile {
+  background: #ffffff;
+  padding: 14px 18px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+
+  /* 🔑 reduce width */
+  width: fit-content;
+  min-width: 400px;
+
+  /* optional */
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+}
+
+.profile-info {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.row {
+  display: flex;
+  gap: 6px;
+  font-size: 15px;
+  white-space: nowrap;
+}
+
+.label {
+  color: #000000;
+  font-weight: 500;
+}
+
+.value {
+  color: #000000;
+  font-weight: 600;
+}
+
+
+/* mobile already perfect */
+
+
+/* 📱 Mobile support */
+@media (max-width: 600px) {
+  .profile {
+    min-width: unset;
+    width: 100%;
+  }
+}
+
+
+
 
 /* ACTIVE STATES */
 .time-filter button.active-today {
   background: #226db4;
-  color: #fff;
+  color: #ffffff;
 }
 
 .time-filter button.active-week {
   background: #226db4;
-  color: #fff;
+  color: #ffffff;
 }
 
 .time-filter button.active-month {
   background: #226db4;
-  color: #fff;
+  color: #ffffff;
 }
 
 .time-filter button.active-all {
   background: #226db4;
-  color: #fff;
+  color: #ffffff;
 }
 
 /* Cards */
@@ -470,6 +592,113 @@ body {
   }
 }
 
+/* =========================
+   PAGE LOAD ANIMATION
+========================= */
+.page-dashboard {
+  animation: pageFade 0.6s ease-in-out;
+}
+
+@keyframes pageFade {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =========================
+   SIDEBAR MENU ANIMATION
+========================= */
+.menu-item {
+  transition: transform 0.25s ease, background 0.25s ease;
+  padding: 10px;
+  border-radiusi;
+}
+
+.menu-item:hover {
+  transform: translateX(6px);
+  background: rgba(0,0,0,0.05);
+  border-radius: 8px;
+}
+
+/* =========================
+   PROFILE CARD ANIMATION
+========================= */
+.profile {
+  animation: slideDown 0.5s ease;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =========================
+   FILTER BUTTON EFFECT
+========================= */
+.time-filter button {
+  transition: background 0.3s ease, transform 0.15s ease;
+}
+
+.time-filter button:active {
+  transform: scale(0.95);
+}
+
+/* =========================
+   CARD APPEAR ANIMATION
+========================= */
+.card {
+  opacity: 0;
+  transform: translateY(15px);
+  animation: cardFadeUp 0.6s ease forwards;
+}
+
+.card:nth-child(1) { animation-delay: 0.2s; }
+.card:nth-child(2) { animation-delay: 0.35s; }
+.card:nth-child(3) { animation-delay: 0.5s; }
+
+@keyframes cardFadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =========================
+   CHART FADE EFFECT
+========================= */
+canvas {
+  animation: chartFade 0.7s ease;
+}
+
+@keyframes chartFade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* =========================
+   MOBILE SAFE
+========================= */
+@media (max-width: 768px) {
+  .menu-item:hover {
+    transform: none;
+  }
+}
+
 
 /* =================
       profile page 
@@ -478,7 +707,7 @@ body {
 /* ===== PROFILE PAGE ONLY ===== */
 .page-profile {
   min-height: 100vh;
-  background: #f2f2f2;
+  background: #e6e6e6;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -666,7 +895,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #f2f2f2;
+  background: #e6e6e6;
   font-family: Inter, sans-serif;
 }
 
@@ -820,7 +1049,7 @@ body {
 .notification-item {
   padding: 12px;
   margin-bottom: 10px;
-  background: #f5f7fa;
+  background: #e6e6e6;
   border-radius: 8px;
   font-size: 15px;
 }
@@ -856,7 +1085,7 @@ body {
 
 .about-page {
   min-height: 100vh;
-  background: #f2f2f2;
+  background: #e6e6e6;
   display: flex;
   justify-content: center;
   align-items: center;

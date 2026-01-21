@@ -28,6 +28,18 @@ function sendMessage() {
     input.value = "";
 }
 
+const sendBtn = document.getElementById("sendBtn");
+
+if (sendBtn) {
+  sendBtn.addEventListener("click", () => {
+    sendBtn.style.transform = "scale(0.9)";
+    setTimeout(() => {
+      sendBtn.style.transform = "scale(1)";
+    }, 120);
+  });
+}
+
+
 
 // ===============================
 // Welcome Back Page Logic (wb-)
